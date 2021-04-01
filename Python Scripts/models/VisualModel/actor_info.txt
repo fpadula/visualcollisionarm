@@ -1,0 +1,28 @@
+TD3VisualAugMixed3Actor(
+  (conv1): Conv2d(1, 16, kernel_size=(4, 4), stride=(4, 4))
+  (conv2): Conv2d(16, 32, kernel_size=(4, 4), stride=(2, 2))
+  (fc1): Linear(in_features=1568, out_features=128, bias=True)
+  (visual_encoder): Sequential(
+    (0): Conv2d(1, 16, kernel_size=(4, 4), stride=(4, 4))
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Conv2d(16, 32, kernel_size=(4, 4), stride=(2, 2))
+    (3): LeakyReLU(negative_slope=0.01)
+    (4): Flatten()
+    (5): Linear(in_features=1568, out_features=128, bias=True)
+  )
+  (fc3): Linear(in_features=151, out_features=256, bias=True)
+  (fc4): Linear(in_features=256, out_features=256, bias=True)
+  (fc5): Linear(in_features=256, out_features=6, bias=True)
+  (policy): Sequential(
+    (0): Linear(in_features=151, out_features=256, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): LeakyReLU(negative_slope=0.01)
+    (4): Linear(in_features=256, out_features=6, bias=True)
+    (5): Tanh()
+  )
+  (fc2): Linear(in_features=128, out_features=3, bias=True)
+  (faug): Sequential(
+    (0): Linear(in_features=128, out_features=3, bias=True)
+  )
+)

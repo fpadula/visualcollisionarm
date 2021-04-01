@@ -1,0 +1,53 @@
+architecture_type: TD3Base
+base_run_id: None
+batch_size: 128
+eval_episodes: 100
+eval_frequency: 50000
+max_step_count: 3500000
+random_seed: 0
+replay_buffer:
+  location: None
+  minimum_obs_before_training: 25000
+  size: 200000
+rl_algorithm:
+  discount: 0.99
+  expl_noise: 0.2
+  noise_clip: 0.5
+  policy_freq: 2
+  policy_noise: 0.2
+  tau: 0.005
+  type: TD3
+simu_info:
+  action_dimension: 6
+  action_magnitude: 1
+  actor_total_params: 74246
+  critic_total_params: 148994
+  env_type: scene
+  no_of_agents: 25
+  state_dimension:
+  - !!python/tuple
+    - 26
+simulation:
+  c1: 10.0
+  c2: 1.0
+  c3: 0.0
+  c4: 1.0
+  collision_ends_episode: 1
+  delta: 0.5
+  distance_to_end: 0.1
+  dref: 0.2
+  ee_only_collision: 0
+  field_of_motion_angle: 2.0
+  max_sol_cart_distance: 5
+  max_sol_joint_distance: 5.0
+  max_steps: 250.0
+  no_solution: 0
+  on_hit_obstacle: -15.0
+  on_hit_self: 0
+  on_hit_target: 20
+  on_timeout: -15.0
+  p: 8.0
+  solid_obstacle: 1
+  speed: 0.01
+step_update_ratio: 0.04
+time_scale: 20

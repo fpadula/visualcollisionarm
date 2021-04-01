@@ -1,0 +1,13 @@
+TD3BaseActor(
+  (l1): Linear(in_features=26, out_features=256, bias=True)
+  (l2): Linear(in_features=256, out_features=256, bias=True)
+  (l3): Linear(in_features=256, out_features=6, bias=True)
+  (model): Sequential(
+    (0): Linear(in_features=26, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=6, bias=True)
+    (5): Tanh()
+  )
+)
