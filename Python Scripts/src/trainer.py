@@ -6,7 +6,6 @@ from mlagents_envs.side_channel.environment_parameters_channel import Environmen
 import torch.optim as optim
 import torch.utils.data as data_utils
 import time
-from torchvision.utils import save_image
 import matplotlib.pyplot as plt
 # from gym_unity.envs import UnityToGymWrapper
 import yaml

@@ -4,9 +4,6 @@ import itertools
 import numpy as np
 from typing import Any, Dict, List, Tuple, Union
 
-import gym
-from gym import error, spaces
-
 from mlagents_envs.base_env import BaseEnv
 from mlagents_envs.base_env import DecisionSteps, TerminalSteps
 from mlagents_envs import logging_util

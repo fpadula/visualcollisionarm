@@ -20,6 +20,8 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
+This project was tested using python versions 3.7.10 and 3.8.8, but any recent python version should work.
+
 1. Clone the repo
    ```sh
    git clone https://github.com/fpadula/VisObstAvoidDRLArm
@@ -31,8 +33,9 @@ To get a local copy up and running follow these simple steps.
    python -m virtualenv venv
    ```
 
-3. Install all the necessary python packages
+3. Enable the virtualenv and install all the necessary python packages
    ```sh
+   source venv/bin/activate
    pip install -r python_packages.txt
    ```
 
