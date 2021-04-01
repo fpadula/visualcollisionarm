@@ -1,0 +1,50 @@
+architecture_type: TD3VisualAugMixed3
+time_scale: 20
+batch_size: 128
+base_run_id: None
+random_seed: 0
+max_step_count: 3500000
+eval_episodes: 100
+eval_frequency: 50000
+# step_update_ratio: 0.1875
+step_update_ratio: 0.04
+rl_algorithm:
+  type: TD3
+  discount: 0.99
+  tau: 0.005
+  policy_noise: 0.2
+  expl_noise: 0.2
+  noise_clip: 0.5
+  policy_freq: 2
+
+replay_buffer:
+  size: 200000
+  minimum_obs_before_training: 25000
+  location: None
+
+simulation:
+  speed: 0.01
+  field_of_motion_angle: 2.0
+  on_hit_target: 20
+  on_hit_obstacle: -15.0
+  on_hit_self: 0
+  no_solution: 0
+  max_sol_cart_distance: 5  
+  max_sol_joint_distance: 5.0
+  on_timeout: -15.0
+  distance_to_end: 0.1
+  max_steps: 250.0
+  collision_ends_episode: 1
+  ee_only_collision: 0
+  solid_obstacle: 1
+  c1: 10.0
+  c2: 1.0
+  # c3: 0.01
+  c3: 0.0
+  c4: 1.0
+  delta: 0.5
+  dref: 0.2
+  p: 8.0
+
+augmentation:
+  indexes: [0,1,2]

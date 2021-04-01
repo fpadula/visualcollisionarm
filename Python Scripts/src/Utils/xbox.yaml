@@ -1,0 +1,35 @@
+ABS_X:
+  action_index: 3
+  src_min: -32768
+  src_max: 32767
+  dest_min: -1
+  dest_max: 1
+  deadzone: 3000
+ABS_Y:
+  action_index: 4
+  src_min: -32768
+  src_max: 32767
+  dest_min: 1
+  dest_max: -1
+  deadzone: 3000
+ABS_RY:
+  action_index: 5
+  src_min: -32768
+  src_max: 32767
+  dest_min: 1
+  dest_max: -1
+  deadzone: 3000
+# ABS_RX:
+#   action_index: 3
+#   src_min: -32768
+#   src_max: 32767
+#   dest_min: -1
+#   dest_max: 1
+#   deadzone: 3000
+# ABS_HAT0Y:
+#   action_index: 4
+#   src_min: -1
+#   src_max: 1
+#   dest_min: -1
+#   dest_max: 1
+#   deadzone: 0
