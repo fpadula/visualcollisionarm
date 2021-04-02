@@ -24,12 +24,12 @@ This project was tested using python versions 3.7.10 and 3.8.8, but any recent p
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/fpadula/VisObstAvoidDRLArm
+   git clone https://github.com/fpadula/visualcollisionarm
    ```
 
 2. Navigate to the **Python Scripts** folder and create a new virtualenv
    ```sh
-   cd Python\ Scripts/
+   cd python_scripts/
    python -m virtualenv venv
    ```
 
