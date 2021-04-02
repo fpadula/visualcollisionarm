@@ -2,9 +2,6 @@ from network_architectures.Base import BaseActor, BaseCritic
 
 import torch.nn as nn
 import torch
-# from Initializations import layer_init, hidden_layer_init
-
-# Networks adapted from Lobos-tsunekawa et. al. (2018), but without LSTMs
 
 class TD3VisualAugMixed3Actor(BaseActor):
     def __init__(self, state_dims, action_dims, output_scale=1.0):
