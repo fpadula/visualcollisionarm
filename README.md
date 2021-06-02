@@ -57,6 +57,11 @@ This project was tested using python versions 3.7.10 and 3.8.8, but any recent p
    python src/trainer.py --run_id ScalarModel --config_file configs/base_config.yaml --device cuda --exec_type eval --env_location simu_envs/AllAgentsScalar/scene.x86_64 --simu_spd 1
    ```
 
+4. Gym-Wrapper example; running a random policy:
+   ```sh
+   python examples/gym_api.py
+   ```
+
 <!-- ROADMAP -->
 ## To-do
 

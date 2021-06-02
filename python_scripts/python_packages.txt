@@ -1,5 +1,6 @@
 mlagents==0.17.0
 torch==1.6.0
 matplotlib==3.2.2
+gym-unity==0.17.0
 inputs==0.5
 opencv-python==4.2.0.34
