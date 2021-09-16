@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project uses a DRL algorithm (TD3) to perform a goal-reaching task for a robotic arm, while avoiding obstacles using camera images.
+This project uses a DRL algorithm (TD3) to perform a goal-reaching task for a robotic arm, while avoiding obstacles using camera images. This is the result of my master thesis, which can be found [here](https://www.teses.usp.br/teses/disponiveis/55/55134/tde-30082021-100712/en.php).
 
 ### Built With
 
