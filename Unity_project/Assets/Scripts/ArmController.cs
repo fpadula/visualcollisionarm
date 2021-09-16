@@ -15,18 +15,17 @@ public class ArmController : MonoBehaviour{
     }
 
     public bool physics_enabled, verbose, agent_control, joints_reached_target_position, ignore_collisions, ignore_sol_dist;    
-    public Transform StartingPose, FollowTarget;
-    public Vector3 TargetOffset;
-    public Transform Base;
+    public Transform StartingPose, TargetToFollow;
+    public Vector3 TargetOffset;    
     public Transform[] JointTransforms;
     public float[] JointAngles;
     public RAxis[] RotationAxis;    
-    public int no_of_big_jumps, MaxStepsBeforeTimeout;
+    public int MaxStepsBeforeTimeout;
     
     private InverseKinematics ik;
     private ManipulatorJoint[] MJoints;    
     private bool reset_pose, joint_timed_out;
-    public int time_out_counter;
+    private int time_out_counter;
     private float[] JointBuffer;
 
     void Start(){
@@ -41,7 +40,8 @@ public class ArmController : MonoBehaviour{
         }     
         this.ik = GetComponent<InverseKinematics>();
         this.reset_pose = false;
-        // ResetPose();
+        if (this.TargetToFollow != null)
+            ResetPose();
     }
 
     private float MapValue(float value, float from1, float to1, float from2, float to2) {
@@ -112,24 +112,11 @@ public class ArmController : MonoBehaviour{
             }
         }         
     }
-    public bool testFk;
-    // Update is called once per frame
+    
     void Update(){
-        if(this.testFk){
-            SetJointsPositions(JointAngles);
-            Vector3 fkpos = this.ik.ComputeFk(JointAngles, false);
-            // Debug.Log(fkpos);
-            this.FollowTarget.localPosition = fkpos;
-        }
-        else{
-            if((!agent_control) && (FollowTarget != null)){
-                // SetEEPose(FollowTarget.localPosition + FollowTarget.rotation*TargetOffset, FollowTarget.localRotation);
-                SetEEPose(FollowTarget.localPosition + FollowTarget.rotation*TargetOffset, FollowTarget.localRotation, ignore_sol_dist);             
-            }
-            // else{            
-            //     SetJointsPositions(JointAngles);            
-            // }
-        }
+        if((!agent_control) && (TargetToFollow != null)){                
+            SetEEPose(TargetToFollow.localPosition + TargetToFollow.rotation*TargetOffset, TargetToFollow.localRotation, ignore_sol_dist);             
+        }            
     }
 
     public int SetEEPose(Vector3 position, Quaternion orientation, bool ignore_sol_dist){
