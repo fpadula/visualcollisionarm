@@ -54,7 +54,7 @@ def eval_model(model, env, eval_episodes=10, rec_arch=False, verbose=False, para
             image = agents_prev_state[0][0][0]
             image = image*255
             image = image.astype(np.uint8)                
-            image = cv2.resize(image, (256, 256)) 
+            # image = cv2.resize(image, (512, 512), interpolation = cv2.INTER_NEAREST) 
             cv2.imshow('Agent image',image)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break             

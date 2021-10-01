@@ -1686,7 +1686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6302624302892269430}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6475, z: 0}
   m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.10000001}
   m_Children: []
   m_Father: {fileID: 8943274136335775767}
@@ -2815,9 +2815,8 @@ MonoBehaviour:
   ignore_collisions: 0
   ignore_sol_dist: 0
   StartingPose: {fileID: 5244293050662101054}
-  FollowTarget: {fileID: 0}
+  TargetToFollow: {fileID: 0}
   TargetOffset: {x: 0, y: 0, z: 0}
-  Base: {fileID: 9213155773212832403}
   JointTransforms:
   - {fileID: 6752805077208923633}
   - {fileID: 8001970144783127309}
@@ -2835,10 +2834,7 @@ MonoBehaviour:
   - 0
   - 0
   RotationAxis: 02000000040000000200000004000000020000000400000002000000
-  no_of_big_jumps: 5
   MaxStepsBeforeTimeout: 100
-  time_out_counter: 0
-  testFk: 0
 --- !u!1 &8943274136335775764
 GameObject:
   m_ObjectHideFlags: 0
