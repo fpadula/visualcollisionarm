@@ -21,13 +21,13 @@ running_average_alpha: 0.75
 segmentation_classes:
 - input_colors:
   - max:
-    - 180.0
-    - 254.99999999999997
+    - 103.0
+    - 173.39999999999998
     - 254.99999999999997
     min:
-    - 3.0
-    - 7.6499999999999995
-    - 109.64999999999999
+    - 94.5
+    - 0.0
+    - 86.69999999999999
     name: blue
   kernel_size: 25
   morph_op: close
@@ -35,22 +35,22 @@ segmentation_classes:
   output_color: 85
 - input_colors:
   - max:
-    - 180.0
-    - 254.99999999999997
+    - 32.0
+    - 196.35
     - 254.99999999999997
     min:
-    - 97.0
-    - 127.49999999999999
-    - 17.849999999999998
+    - 5.0
+    - 107.1
+    - 117.3
     name: orange
   - max:
     - 180.0
     - 254.99999999999997
     - 254.99999999999997
     min:
-    - 108.5
-    - 0.0
-    - 84.14999999999999
+    - 115.5
+    - 25.5
+    - 165.75
     name: red
   kernel_size: 0
   morph_op: open
@@ -58,14 +58,51 @@ segmentation_classes:
   output_color: 255
 ws_corners:
   bottom_left:
-  - 753.2620264313148
-  - 498.00470086319916
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      /6JUqDiKkUA=
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      VRhhoAtvjEA=
   bottom_right:
-  - 1208.7173890588952
-  - 1004.4534631007798
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      VVF8X72wkUA=
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      d+/tyVVCUEA=
   top_left:
-  - 1247.3013490773894
-  - 43.696409711293484
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      oIwZKZCDgUA=
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      HLaQIFAhjEA=
   top_right:
-  - 1716.1028837238332
-  - 542.2521385875308
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      wlNqpOMngkA=
+  - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      R4iP57XAREA=

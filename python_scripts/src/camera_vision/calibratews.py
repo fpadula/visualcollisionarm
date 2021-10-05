@@ -3,6 +3,7 @@ import cv2
 import dt_apriltags
 import yaml
 import argparse
+from math import fabs
 
 # Print line between two points with floating type
 def draw_line(frame, point_a, point_b, color, width):
@@ -127,7 +128,7 @@ def main():
     tag_detector = dt_apriltags.Detector(families='tag36h11')
     camera_matrix = np.array(params["camera_matrix"])
     camera_distortion = np.array(params["distort_coefs"])
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
     # Same dimensions as calibrated
     # size = (2304, 1536)
     size = params["camera_resolution"]
@@ -181,13 +182,16 @@ def main():
         if key == 13:
             detecting_ws_corners = False
             print("\tSaving workspace specs to file...")
-            # ws_corners = np.array(ws_corners)
+            ws_corners = np.array(ws_corners)
             # np.savetxt('ws_corners.txt', ws_corners, delimiter=',')
+            
+            #quit()
             params["ws_corners"]["top_right"] = ws_corners[0].tolist()
             params["ws_corners"]["bottom_right"] = ws_corners[1].tolist()
             params["ws_corners"]["bottom_left"] = ws_corners[2].tolist()
             params["ws_corners"]["top_left"] = ws_corners[3].tolist()
-            with open("config.yaml", 'w', encoding='UTF-8') as outfile:
+            #with open("config.yaml", 'w', encoding='UTF-8') as outfile:
+            with open(args.config_file, 'w', encoding='UTF-8') as outfile:
                 yaml.dump(params, outfile, default_flow_style=False)
         # Load from file:
         elif key==27:
@@ -200,14 +204,15 @@ def main():
                 params["ws_corners"]["top_left"]
             ]
     print(ws_corners)
-    w = ws_corners[0][0] - ws_corners[3][0]
-    h = ws_corners[1][1] - ws_corners[0][1]
+    w = fabs(ws_corners[0][0] - ws_corners[1][0])
+    h = fabs(ws_corners[1][1] - ws_corners[3][1])
     dest_pts = np.float32([
         [w, 0],
         [w, h],
         [0, h],
         [0, 0]
     ])
+    print(dest_pts)
     camera_to_workspace_H, ws_view_size = calculate_H(ws_corners,False,
                                                       dest_pts)
     i += 1
@@ -251,7 +256,7 @@ def main():
                     print("\tSaving workspace specs to file...")
                     color["min"] = [v1_min, v2_min, v3_min]
                     color["max"] = [v1_max, v2_max, v3_max]
-                    with open("config.yaml", 'w', encoding='UTF-8') as outfile:
+                    with open(args.config_file, 'w', encoding='UTF-8') as outfile:
                         yaml.dump(params, outfile, default_flow_style=False)
                 # Load from file:
                 elif key==27:
@@ -336,7 +341,7 @@ def main():
         # Save to file:
         if key == 13:
             displaying_seg = False
-            with open("config.yaml", 'w', encoding='UTF-8') as outfile:
+            with open(args.config_file, 'w', encoding='UTF-8') as outfile:
                 yaml.dump(params, outfile, default_flow_style=False)
         # Load from file:
         elif key==27:
