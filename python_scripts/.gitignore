@@ -7,7 +7,7 @@
 **/__pycache__/**
 # **/models/*
 # **/simu_envs/*
-**.vscode
+**/.vscode
 
 /[Ll]ibrary/
 /[Tt]emp/
