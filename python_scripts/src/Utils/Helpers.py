@@ -188,7 +188,6 @@ class GymEnvStd():
         return [state], reward, done, info
 
 class UnityEnvStd():
-
     def __init__(self, env, string_log, action_magnitude = 1):
         self.env_orig = env
 
@@ -303,3 +302,5 @@ class NaiveModel():
         
         action = np.array([0, 0, 0, dir[0], dir[1], dir[2]])
         return action.reshape(1,-1)
+
+        
